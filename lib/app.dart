@@ -28,8 +28,10 @@ class TaskManagerApp extends StatelessWidget {
         ),
         textTheme: const TextTheme(
           titleLarge:
-              TextStyle(fontSize: 24, fontWeight: FontWeight.w600)
-        )
+              TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+          bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+        ),
+
       ),
     );
   }
