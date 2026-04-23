@@ -104,10 +104,10 @@ class _loginScreenState extends State<loginScreen> {
   }
 
   void _onTapForgetPassword() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => forgotPasswordVerifyEmail()));
+    Navigator.pushNamed(context, '/verify_email');
   }
   void _onTapSignUpButton(){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=> registrationScreen()));
+   Navigator.pushNamed(context, '/register');
   }
 @override
   void dispose() {

@@ -23,7 +23,10 @@ class _Splash_ScreenState extends State<Splash_Screen> {
 
   Future<void>_moveToNextScreen() async{
     await Future.delayed(const Duration(seconds: 2));
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => loginScreen()));
+    if(!mounted) return;
+      Navigator.pushReplacementNamed(context, '/login');
+
+
   }
   Widget build(BuildContext context) {
     return Scaffold(

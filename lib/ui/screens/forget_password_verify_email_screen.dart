@@ -89,7 +89,7 @@ class _forgotPasswordVerifyEmailState extends State<forgotPasswordVerifyEmail> {
   }
 
   void _onTapSubmitButton(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => forgotPasswordPinVerificationScreen()));
+    Navigator.pushNamed(context, '/pin_verification');
   }
 
   void _onTapSignInButton(){

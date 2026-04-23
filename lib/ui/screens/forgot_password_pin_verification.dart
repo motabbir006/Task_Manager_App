@@ -9,12 +9,13 @@ class forgotPasswordPinVerificationScreen extends StatefulWidget {
   const forgotPasswordPinVerificationScreen({super.key});
 
   @override
-  State<forgotPasswordPinVerificationScreen> createState() => _forgotPasswordPinVerificationScreenState();
+  State<forgotPasswordPinVerificationScreen> createState() =>
+      _forgotPasswordPinVerificationScreenState();
 }
 
-class _forgotPasswordPinVerificationScreenState extends State<forgotPasswordPinVerificationScreen> {
+class _forgotPasswordPinVerificationScreenState
+    extends State<forgotPasswordPinVerificationScreen> {
   @override
-
   final TextEditingController _pinCodeController = TextEditingController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -35,11 +36,13 @@ class _forgotPasswordPinVerificationScreenState extends State<forgotPasswordPinV
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
 
-                const SizedBox(
-                  height: 20,
+                const SizedBox(height: 20),
+                Text(
+                  'A 6 digit verification pin has been sent to your email. ',
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyLarge?.copyWith(color: Colors.grey),
                 ),
-                Text('A 6 digit verification pin has been sent to your email. ',
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.grey)),
                 const SizedBox(height: 25),
                 PinCodeTextField(
                   length: 6,
@@ -55,14 +58,12 @@ class _forgotPasswordPinVerificationScreenState extends State<forgotPasswordPinV
                     activeColor: Colors.white,
                     selectedColor: Colors.white,
                     inactiveFillColor: Colors.white,
-
                   ),
                   animationDuration: Duration(milliseconds: 300),
                   backgroundColor: Colors.transparent,
                   enableActiveFill: true,
                   controller: _pinCodeController,
                   appContext: context,
-
                 ),
                 const SizedBox(height: 25),
                 ElevatedButton(
@@ -101,11 +102,11 @@ class _forgotPasswordPinVerificationScreenState extends State<forgotPasswordPinV
     );
   }
 
-void _onTapSubmitButton(){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=> resetPasswordScreem()));
-}
-  void _onTapSignInButton(){
-    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=> loginScreen()), (pre) =>false);
+  void _onTapSubmitButton() {
+    Navigator.pushNamed(context, '/reset_password');
   }
 
+  void _onTapSignInButton() {
+    Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
+  }
 }

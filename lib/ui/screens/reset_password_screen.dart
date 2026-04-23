@@ -7,12 +7,16 @@ import 'package:task_management_with_sourov/ui/widgets/screen_background.dart';
 class resetPasswordScreem extends StatefulWidget {
   const resetPasswordScreem({super.key});
 
+
   @override
   State<resetPasswordScreem> createState() => _resetPasswordScreemState();
 }
 
 class _resetPasswordScreemState extends State<resetPasswordScreem> {
   @override
+
+  bool _isPasswordVisible = false;
+  bool _isConfirmPasswordVisible = false;
 
   final TextEditingController _newPasswordController = TextEditingController();
   final TextEditingController _confirmNewPasswordController = TextEditingController();
@@ -42,6 +46,7 @@ class _resetPasswordScreemState extends State<resetPasswordScreem> {
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.grey)),
                 const SizedBox(height: 25),
                 TextFormField(
+                  obscureText: !_isPasswordVisible,
                   textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.emailAddress,
                   controller: _newPasswordController,
@@ -51,10 +56,19 @@ class _resetPasswordScreemState extends State<resetPasswordScreem> {
                       fontWeight: FontWeight.w400,
                       color: Colors.grey,
                     ),
+                    suffixIcon: IconButton(onPressed: (){
+                      setState(() {
+                        _isPasswordVisible= !_isPasswordVisible ;
+                      });
+                    }, icon: Icon(
+                      _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                      color: Colors.grey,
+                    ))
                   ),
                 ),
                 const SizedBox(height: 25),
                 TextFormField(
+                  obscureText: !_isConfirmPasswordVisible,
                   textInputAction: TextInputAction.next,
                   controller: _confirmNewPasswordController,
                   decoration: InputDecoration(
@@ -63,6 +77,12 @@ class _resetPasswordScreemState extends State<resetPasswordScreem> {
                       fontWeight: FontWeight.w400,
                       color: Colors.grey,
                     ),
+                    suffixIcon: IconButton(onPressed: (){
+                      setState(() {
+                        _isConfirmPasswordVisible= !_isConfirmPasswordVisible ;
+                      });
+                    }, icon: Icon( _isConfirmPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                      color: Colors.grey,))
                   ),
                 ),
                 const SizedBox(height: 25),

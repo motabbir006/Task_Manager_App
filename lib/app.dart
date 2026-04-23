@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_with_sourov/ui/screens/forget_password_verify_email_screen.dart';
+import 'package:task_management_with_sourov/ui/screens/forgot_password_pin_verification.dart';
+import 'package:task_management_with_sourov/ui/screens/login_screen.dart';
+import 'package:task_management_with_sourov/ui/screens/registration_screen.dart';
+import 'package:task_management_with_sourov/ui/screens/reset_password_screen.dart';
 import 'package:task_management_with_sourov/ui/screens/splash_screen.dart';
 
 class TaskManagerApp extends StatelessWidget {
@@ -6,7 +11,6 @@ class TaskManagerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash_Screen(),
       theme: ThemeData(
         inputDecorationTheme: InputDecorationTheme(
           fillColor: Colors.white,
@@ -32,7 +36,23 @@ class TaskManagerApp extends StatelessWidget {
           bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
 
+
       ),
+initialRoute: '/',
+      routes: {
+        '/': (context) => Splash_Screen(),
+        '/login': (context) => loginScreen(),
+        '/register': (context) => registrationScreen(),
+        '/verify_email': (context) => forgotPasswordVerifyEmail(),
+        '/pin_verification': (context) => forgotPasswordPinVerificationScreen(),
+        '/reset_password': (context) => resetPasswordScreem(),
+
+
+
+
+
+
+    },
     );
   }
   OutlineInputBorder _getZeroBorder() {
