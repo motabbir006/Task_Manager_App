@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_management_with_sourov/ui/screens/forget_password_verify_email_screen.dart';
 import 'package:task_management_with_sourov/ui/screens/forgot_password_pin_verification.dart';
 import 'package:task_management_with_sourov/ui/screens/login_screen.dart';
+import 'package:task_management_with_sourov/ui/screens/main_bottom_navigation_screen.dart';
 import 'package:task_management_with_sourov/ui/screens/registration_screen.dart';
 import 'package:task_management_with_sourov/ui/screens/reset_password_screen.dart';
 import 'package:task_management_with_sourov/ui/screens/splash_screen.dart';
@@ -46,6 +47,7 @@ initialRoute: '/',
         '/verify_email': (context) => forgotPasswordVerifyEmail(),
         '/pin_verification': (context) => forgotPasswordPinVerificationScreen(),
         '/reset_password': (context) => resetPasswordScreem(),
+        '/main_bottom_nav': (context) => mainBottomNavScreen()
 
 
 

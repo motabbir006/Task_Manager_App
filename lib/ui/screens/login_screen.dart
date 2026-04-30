@@ -60,7 +60,7 @@ class _loginScreenState extends State<loginScreen> {
                 ),
                 const SizedBox(height: 8),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: _onTapSignInButton,
                   child: const Icon(Icons.arrow_circle_right_outlined),
                 ),
                 const SizedBox(height: 26),
@@ -103,6 +103,10 @@ class _loginScreenState extends State<loginScreen> {
     );
   }
 
+  void _onTapSignInButton() {
+    Navigator.pushNamedAndRemoveUntil(context, '/main_bottom_nav', (route) => false);
+
+  }
   void _onTapForgetPassword() {
     Navigator.pushNamed(context, '/verify_email');
   }
