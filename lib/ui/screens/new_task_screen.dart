@@ -33,10 +33,15 @@ class _newTaskScreenState extends State<newTaskScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _onTapAddTaskButton,
         child: (Icon(Icons.add)),
       ),
     );
+  }
+
+  void _onTapAddTaskButton() {
+    Navigator.pushNamed(context, '/add_New_Task');
+
   }
 
   Widget _buildSummerySection() {

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_with_sourov/ui/screens/add_new_task.dart';
+import 'package:task_management_with_sourov/ui/screens/cancelled_task_screen.dart';
+import 'package:task_management_with_sourov/ui/screens/complete_task_screen.dart';
 import 'package:task_management_with_sourov/ui/screens/forget_password_verify_email_screen.dart';
 import 'package:task_management_with_sourov/ui/screens/forgot_password_pin_verification.dart';
 import 'package:task_management_with_sourov/ui/screens/login_screen.dart';
@@ -6,6 +9,7 @@ import 'package:task_management_with_sourov/ui/screens/main_bottom_navigation_sc
 import 'package:task_management_with_sourov/ui/screens/registration_screen.dart';
 import 'package:task_management_with_sourov/ui/screens/reset_password_screen.dart';
 import 'package:task_management_with_sourov/ui/screens/splash_screen.dart';
+import 'package:task_management_with_sourov/ui/screens/update_profile_screen.dart';
 
 class TaskManagerApp extends StatelessWidget {
   @override
@@ -47,7 +51,11 @@ initialRoute: '/',
         '/verify_email': (context) => forgotPasswordVerifyEmail(),
         '/pin_verification': (context) => forgotPasswordPinVerificationScreen(),
         '/reset_password': (context) => resetPasswordScreem(),
-        '/main_bottom_nav': (context) => mainBottomNavScreen()
+        '/main_bottom_nav': (context) => mainBottomNavScreen(),
+        '/cancelled_Task_Screen': (context) => cancelledTaskScreen(),
+        '/complete_Task_Screen': (context) => completeTaskScreen(),
+        '/add_New_Task': (context) => addNewTask(),
+        '/update_Profile_Screen': (context)=> updateProfileScreen(),
 
 
 

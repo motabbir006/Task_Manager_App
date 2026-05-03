@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:task_management_with_sourov/ui/screens/cancelled_task_screen.dart';
 import 'package:task_management_with_sourov/ui/screens/progress_task_screen.dart';
 
 import '../widgets/tm_appbar.dart';
+import 'complete_task_screen.dart';
 import 'new_task_screen.dart';
 
 class mainBottomNavScreen extends StatefulWidget {
@@ -18,6 +20,8 @@ class _mainBottomNavScreenState extends State<mainBottomNavScreen> {
   List<Widget> _screens =[
     newTaskScreen(),
     progressTaskScreen(),
+    completeTaskScreen(),
+    cancelledTaskScreen(),
   ];
 
   @override
